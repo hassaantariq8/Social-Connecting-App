@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>Sign Up | Login Form</title>
+</head>
+<body>
+  <section>
+    <div class="container">
+      <!-- Login Section -->
+      <div class="user login" id="login-section">
+        <div class="img-box">
+          <img src="./images/login.svg" alt="Login Image">
+        </div>
+        <div class="form-box">
+          <div class="top">
+            <p>Not a member? <span data-id="#ff0066">Register now</span></p>
+          </div>
+          <form id="login-form">
+            <div class="form-control">
+              <h2>Hello Again!</h2>
+              <p>Welcome back, you've been missed.</p>
+              <input type="text" id="login-username" placeholder="Enter Username" required>
+              <div>
+                <input type="password" id="login-password" placeholder="Password" required>
+              </div>
+              <span>Recovery Password</span>
+              <input type="submit" value="Login">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Signup Section -->
+      <div class="user signup" id="signup-section">
+        <div class="form-box">
+          <div class="top">
+            <p>Already a member? <span data-id="#1a1aff">Login now</span></p>
+          </div>
+          <form id="signup-form">
+            <div class="form-control">
+              <h2>Welcome!</h2>
+              <p>It's good to have you here.</p>
+              <input type="text" id="signup-username" placeholder="Enter Username" required>
+              <input type="email" id="signup-email" placeholder="Enter Email" required>
+              <div>
+                <input type="password" id="signup-password" placeholder="Password" required>
+              </div>
+              <div>
+                <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+              </div>
+              <input type="submit" value="Register">
+            </div>
+          </form>
+        </div>
+        <div class="img-box">
+          <img src="./images/trial.svg" alt="Signup Image">
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="feed profile" id="profile-section" style="display: none;">
+      <h2>Welcome, <span id="profile-username"></span></h2>
+      <p>Email: <span id="profile-email"></span></p>
+      <button id="logout-btn">Logout</button>
+      <div class="posts-list"></div>
+
+      <!-- Post Section -->
+      <div class="post">
+        <textarea placeholder="Write something..."></textarea>
+        <input type="file" id="file-upload" accept="image/*,video/*"> <!-- Fixed ID -->
+        <button id="post-button">Post</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="./js/index.js"></script>
+</body>
+</html>
