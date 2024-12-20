@@ -1,0 +1,508 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+    margin: 0;
+    color: #333;
+}
+body {
+    transition: opacity 0.8s ease-in-out;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(98, 0, 234, 0.8), rgba(255, 0, 150, 0.8));
+    color: white;
+    padding: 20px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+nav.shrink {
+    padding: 15px 30px;
+    background: linear-gradient(90deg, rgba(255, 0, 150, 0.8),rgba(98, 0, 234, 0.8) );
+    transition: padding 0.9s ease-in-out, background 0.9s ease-in-out;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+nav ul li:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.profile-card,
+.sidebar,
+.feed {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover,
+.sidebar:hover,
+.feed:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.profile-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feed {
+    flex: 1;
+    
+}
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.actions button {
+    font-size: 2em;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    transition: transform 0.2s;
+}
+
+.like-button {
+    position: relative;
+}
+
+.like-animation {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    font-size: 3em;
+    color: red;
+    animation: like-grow 0.5s ease forwards;
+    pointer-events: none;
+}
+
+@keyframes like-grow {
+    0% {
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(-50%) scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0;
+    }
+}
+
+.comments {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.comment {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comment-user {
+    font-weight: bold;
+}
+
+.comment-time {
+    font-size: 0.8em;
+    color: gray;
+}
+
+.comment-section {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.comment-section input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.comment-section button {
+    padding: 10px;
+    border: none;
+    background: rgba(98, 0, 234, 0.8);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.comment-section button:hover {
+    background: rgba(98, 0, 234, 1);
+}
+
+/* Navbar general styles */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green theme */
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+#navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+}
+
+/* Navigation links */
+.nav-links {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links li:hover {
+    color: #f0f0f0;
+}
+
+/* Search container */
+.search-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-bar {
+    width: 60%;
+    max-width: 400px;
+    padding: 8px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    transition: box-shadow 0.3s;
+}
+
+#search-bar:focus {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Log out button */
+.logout-button {
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #ffffff;
+    color: #4CAF50;
+}
+
+/* Updated search result styles */
+.search-results .search-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: default; /* No pointer cursor since we have a button */
+}
+
+.search-results .search-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.search-results .search-item .user-details {
+    flex: 1;
+}
+
+.search-results .search-item .user-details p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.search-results .search-item button {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-results .search-item button:hover {
+    background-color: #45a049;
+}
+
+/* Friend Requests Section */
+#requests-list .request-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+#requests-list .request img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover;  /* Ensures the image fills the space proportionally */
+}
+
+
+#requests-list .request-item img {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+}
+
+#requests-list .request-item .request-details {
+    flex: 1;
+    margin-left: 10px;
+}
+
+#requests-list .request-item .request-details p {
+    margin: 0;
+    font-size: 14px;
+}
+
+#requests-list .request-item .actions button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#requests-list .request-item .actions button.accept {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#requests-list .request-item .actions button.accept:hover {
+    background-color: #45a049;
+}
+
+#requests-list .request-item .actions button.decline {
+    background-color: #f44336;
+    color: white;
+}
+
+#requests-list .request-item .actions button.decline:hover {
+    background-color: #e53935;
+}
+
+.sidebar h3 {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+#mutual-friends-list, #suggestions-list {
+    margin-top: 10px;
+}
+
+.friend {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.friend img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.friend p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Feed section for dynamic posts */
+.feed {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    position: relative;
+}
+.add-post button {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #c65091;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(237, 101, 242, 0.4);
+}
+
+.add-post button:hover {
+    background-color: #c65091;
+    transform: translateY(-4px) scale(1.05); /* Adds a cool pop-up effect */
+    box-shadow: 0 8px 20px rgba(237, 101, 242, 0.4); /* More prominent shadow on hover */
+}
+
+.add-post button:active {
+    transform: translateY(-2px); /* Slightly less pop when clicked */
+    box-shadow: 0 4px 12px rgba(237, 101, 242, 0.4);
+}
+
+
+/* Modal for creating a new post */
+.post-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    z-index: 101;
+}
+
+textarea {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #c65091;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: rgba(202, 36, 208, 0.4);
+}
+
+
+
+
+
+
+
+
+
+
+.suggestions-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.suggestion-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.send-request-button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.send-request-button:hover {
+    background-color: #45a049;
+}
+

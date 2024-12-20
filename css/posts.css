@@ -1,0 +1,162 @@
+/* Add Post Section */
+.add-post {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    top: 0;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+/* Container for the posts */
+#posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Post container */
+.post {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Post header - user information */
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.post-author {
+    font-weight: bold;
+}
+
+.post-username {
+    font-size: 14px;
+    color: gray;
+}
+
+.post-time {
+    font-size: 12px;
+    color: gray;
+    margin-left: auto;
+}
+
+/* Post content */
+.post-content {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 10px;
+    margin-bottom: 15px; /* Ensures spacing with the action buttons */
+}
+
+/* Media for images and videos */
+.post-media {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    margin-top: 15px;
+    margin-left: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.post-media:hover {
+    transform: scale(1.1); /* Zoom effect */
+}
+
+/* Post actions (like and comment) */
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.like-button, .comment-button {
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.like-button:hover, .comment-button:hover {
+    transform: scale(1.1);
+}
+
+.liked {
+    color: red; /* Highlight the like button if liked */
+}
+
+/* Comments Section */
+.post-comments {
+    margin-top: 15px;
+    font-size: 14px;
+    color: gray;
+}
+
+.post-comments input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .post {
+        padding: 10px;
+    }
+
+    .post-profile-pic {
+        width: 100%;
+    }
+
+    .post-author, .post-username {
+        font-size: 12px;
+    }
+
+    .post-time {
+        font-size: 10px;
+    }
+
+    .post-content {
+        font-size: 14px;
+    }
+
+    .post-media {
+        max-width: 100%;
+    }
+
+    .like-button, .comment-button {
+        font-size: 16px;
+    }
+
+    .post-comments input {
+        font-size: 12px;
+    }
+}
+

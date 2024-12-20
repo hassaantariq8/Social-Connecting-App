@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>heartbeat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/posts.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="logo">heartbeat</div>
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search people..." oninput="searchUsers(this.value)">
+        </div>
+        <div id="logout" class="logout-button" onclick="logOut()">Log Out</div>
+    </nav>
+    <div id="search-results" class="search-results"></div>
+
+    <div class="container">
+       
+        <div id="user-section" class="profile-card">
+            <img src="https://via.placeholder.com/100" alt="Profile Picture" class="profile-pic">
+            <h3 class="user-name" id="logged-in-name">User Name</h3>
+            <p class="user-username" id="logged-in-username">@username</p>
+        </div>
+
+        
+        <div class="feed">
+           
+            <div class="add-post">
+                <textarea id="new-post-text" placeholder="What's on your mind?"></textarea>
+                <input type="file" id="post-media" accept="image/*,video/*">
+                <button onclick="submitPost()">Post</button>
+            </div>
+        
+            
+            <div id="posts-container"></div>
+        </div>
+
+       
+        <div class="sidebar">
+            <h3>Friends</h3>
+            <div id="friends-list"></div>
+            <h3>Friend Requests</h3>
+            <div id="requests-list"></div>
+            <h3>Mutual Friends</h3>
+            <div id="mutual-friends-list"></div>
+            <h3>Suggestions</h3>
+            <div id="suggestions-list"></div>
+        </div>
+    </div>
+
+   
+    <script src="./js/dashboard.js"></script>
+    <script src="./js/posts.js"></script>
+</body>
+</html>
