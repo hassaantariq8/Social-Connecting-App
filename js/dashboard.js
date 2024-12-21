@@ -420,6 +420,7 @@ function acceptFriendRequest(senderUsername) {
     updateFriendsList();
     updateRequestsList(); 
     alert(`You are now friends with ${senderNode.data.username}!`);
+    location.reload();
 }
 
 function declineFriendRequest(senderUsername) {
